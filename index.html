@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>책들의 도시: 전설의 책을 찾아서</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="ui-overlay">
+    <div id="map-title"></div>
+    <div id="hint"></div>
+    <div id="health-bar"><div id="health-fill"></div></div>
+    <div id="health-label">❤️ HP</div>
+    <div id="inventory-panel">
+      <h3>🎒 인벤토리</h3>
+      <div id="inv-slots"></div>
+      <div style="margin-top:8px;border-top:1px solid #333;padding-top:6px;">
+        <span style="color:#ffd700;">💰 골드:</span>
+        <span id="gold-count" style="color:#ffd700;font-weight:bold;">0</span>
+      </div>
+    </div>
+    <div id="quest-panel">
+      <h3>📜 퀘스트</h3>
+      <div id="quest-log"></div>
+    </div>
+    <div id="quest-popup">
+      <h2 id="quest-popup-title"></h2>
+      <p id="quest-popup-desc"></p>
+      <p id="quest-popup-reward"></p>
+      <div style="text-align:center; margin-top:16px;">
+        <button id="quest-accept" style="padding:10px 32px;background:#ffd700;color:#140f23;border:none;border-radius:6px;cursor:pointer;font-weight:bold;font-size:16px;">수락</button>
+        <button id="quest-decline" style="padding:10px 24px;background:#555;color:#e6e6e6;border:none;border-radius:6px;cursor:pointer;font-size:16px;margin-left:12px;">거절</button>
+      </div>
+    </div>
+    <div id="interact-prompt">E 키를 눌러 대화</div>
+    <div id="enemy-warning">⚠️ 잉크 괴물이 접근 중!</div>
+    <div id="bookshelf-prompt">E 키로 책장 열기</div>
+    <div id="attack-hint">스페이스바: 근접 공격 | 클릭: 마법 발사</div>
+    <div id="dialogue-box">
+      <div class="npc-name"></div>
+      <div class="dialogue-text"></div>
+      <div class="continue-hint"></div>
+    </div>
+    <div id="win-screen" class="hidden">
+      <h1>전설의 책을 발견했다!</h1>
+    </div>
+    <div id="duel-overlay">
+      <div id="duel-box">
+        <h2>⚔️ 책 사냥꾼과 결투!</h2>
+        <div class="dice-row">
+          <div class="dice-section">
+            <div class="label">당신</div>
+            <div class="dice" id="player-dice">?</div>
+          </div>
+          <div class="dice-section">
+            <div class="label">책 사냥꾼</div>
+            <div class="dice" id="enemy-dice">?</div>
+          </div>
+        </div>
+        <div id="duel-result"></div>
+        <button id="duel-btn">주사위 굴리기!</button>
+      </div>
+    </div>
+    <div id="bookshelf-ui">
+      <h2>📚 내 책장</h2>
+      <div class="shelf-section">
+        <h4>📖 들고 있는 책</h4>
+        <div id="shelf-held"></div>
+      </div>
+      <div class="shelf-section">
+        <h4>🏠 책장에 꽂은 책</h4>
+        <div id="shelf-stored"></div>
+      </div>
+      <div style="text-align:center; margin-top:12px;">
+        <button id="bookshelf-close" style="padding:8px 24px;background:#64c8ff;color:#140f23;border:none;border-radius:6px;cursor:pointer;font-weight:bold;">닫기 (E)</button>
+      </div>
+    </div>
+    <div id="shop-ui">
+      <h2 id="shop-title"></h2>
+      <div id="shop-items"></div>
+      <div id="shop-sell-section">
+        <h4>📦 판매하기</h4>
+        <div id="shop-sell-items"></div>
+      </div>
+      <div style="text-align:center; margin-top:12px;">
+        <button id="shop-close" style="padding:8px 24px;background:#64c8ff;color:#140f23;border:none;border-radius:6px;cursor:pointer;font-weight:bold;">닫기 (E)</button>
+      </div>
+    </div>
+  </div>
+  <canvas id="game"></canvas>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

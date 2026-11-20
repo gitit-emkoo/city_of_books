@@ -1,0 +1,15 @@
+{
+  "env": {
+    "DASHSCOPE_API_KEY": "sk-ws-H.DIPLLML.eBLy.MEYCIQDDOQHXryYU88rgFTH-rAWXxvhFJsv6sadcmcm78vSIygIhAPAmhA9Rq1_vZ2vq2tzDFtfIoumnglTIy5kOTd6brlY7"
+  },
+  "modelProviders": {
+    "openai": [
+      {
+        "id": "qwen3.6-plus",
+        "name": "qwen3.6-plus (city of books)",
+        "baseUrl": "https://ws-68pzgbsmigd1g2ey.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
+        "envKey": "DASHSCOPE_API_KEY"
+      }
+    ]
+  }
+}
